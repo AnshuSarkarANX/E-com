@@ -1,0 +1,52 @@
+import type { Address, Banner, Category, Order, Product, Promotion, User } from "./types";
+
+export const categories: Category[] = [
+  { id: "cat-electronics", name: "Electronics", slug: "electronics", imageUrl: "https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=900&auto=format&fit=crop" },
+  { id: "cat-clothing", name: "Clothing", slug: "clothing", imageUrl: "https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=900&auto=format&fit=crop" },
+  { id: "cat-food", name: "Food & Snacks", slug: "food-snacks", imageUrl: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=900&auto=format&fit=crop" },
+];
+
+const [electronics, clothing, food] = categories;
+
+export const products: Product[] = [
+  { id: "p-aurora-headphones", name: "Aurora Noise Canceling Headphones", description: "Wireless over-ear headphones with plush cups, 42-hour battery, and tuned bass.", price: 7999, compareAtPrice: 9999, stock: 16, isActive: true, images: ["https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=900&auto=format&fit=crop"], categoryId: electronics.id, category: electronics, badge: { type: "BEST_SELLER", label: "Best Seller", color: "#01696f" }, isFeatured: true, isProductOfMonth: false, soldCount: 126, createdAt: "2026-05-02T10:00:00.000Z" },
+  { id: "p-pocket-speaker", name: "Pocket Beam Speaker", description: "Compact Bluetooth speaker with rich mids and splash resistance.", price: 2499, compareAtPrice: null, stock: 3, isActive: true, images: ["https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=900&auto=format&fit=crop"], categoryId: electronics.id, category: electronics, badge: null, isFeatured: false, isProductOfMonth: false, soldCount: 61, createdAt: "2026-06-01T10:00:00.000Z" },
+  { id: "p-smartwatch", name: "PulseFit Smartwatch", description: "AMOLED display, health tracking, GPS workouts, and quick notifications.", price: 5999, compareAtPrice: 7499, stock: 0, isActive: true, images: ["https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=900&auto=format&fit=crop"], categoryId: electronics.id, category: electronics, badge: { type: "SALE", label: "Sale", color: "#16a34a" }, isFeatured: false, isProductOfMonth: false, soldCount: 89, createdAt: "2026-04-14T10:00:00.000Z" },
+  { id: "p-desk-lamp", name: "Halo Desk Lamp", description: "Dimmable LED lamp with warm and cool temperature presets.", price: 1899, compareAtPrice: null, stock: 22, isActive: true, images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=900&auto=format&fit=crop"], categoryId: electronics.id, category: electronics, badge: { type: "NEW", label: "New", color: "#2563eb" }, isFeatured: false, isProductOfMonth: false, soldCount: 18, createdAt: "2026-06-10T10:00:00.000Z" },
+  { id: "p-linen-shirt", name: "Coastal Linen Shirt", description: "Breathable linen blend shirt tailored for daily wear.", price: 2199, compareAtPrice: null, stock: 28, isActive: true, images: ["https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=900&auto=format&fit=crop"], categoryId: clothing.id, category: clothing, badge: { type: "TRENDING", label: "Trending", color: "#7c3aed" }, isFeatured: true, isProductOfMonth: false, soldCount: 73, createdAt: "2026-05-18T10:00:00.000Z" },
+  { id: "p-cotton-tee", name: "Everyday Cotton Tee", description: "Soft 220 GSM cotton tee with a relaxed fit.", price: 899, compareAtPrice: null, stock: 44, isActive: true, images: ["https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=900&auto=format&fit=crop"], categoryId: clothing.id, category: clothing, badge: null, isFeatured: false, isProductOfMonth: false, soldCount: 104, createdAt: "2026-03-22T10:00:00.000Z" },
+  { id: "p-denim-jacket", name: "Indigo Denim Jacket", description: "Structured mid-weight jacket with antique hardware.", price: 3499, compareAtPrice: null, stock: 4, isActive: true, images: ["https://images.unsplash.com/photo-1543076447-215ad9ba6923?q=80&w=900&auto=format&fit=crop"], categoryId: clothing.id, category: clothing, badge: { type: "LIMITED", label: "Limited", color: "#dc2626" }, isFeatured: false, isProductOfMonth: false, soldCount: 49, createdAt: "2026-05-06T10:00:00.000Z" },
+  { id: "p-running-shoes", name: "Stride Knit Running Shoes", description: "Lightweight knit runners with responsive foam and grippy soles.", price: 4499, compareAtPrice: 5499, stock: 13, isActive: true, images: ["https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=900&auto=format&fit=crop"], categoryId: clothing.id, category: clothing, badge: null, isFeatured: false, isProductOfMonth: true, soldCount: 132, createdAt: "2026-04-28T10:00:00.000Z" },
+  { id: "p-granola", name: "Crunchy Almond Granola", description: "Small-batch granola with almonds, oats, honey, and seeds.", price: 499, compareAtPrice: null, stock: 35, isActive: true, images: ["https://images.unsplash.com/photo-1517093157656-b9eccef91cb1?q=80&w=900&auto=format&fit=crop"], categoryId: food.id, category: food, badge: { type: "HOT", label: "Hot", color: "#f97316" }, isFeatured: false, isProductOfMonth: false, soldCount: 95, createdAt: "2026-05-11T10:00:00.000Z" },
+  { id: "p-trail-mix", name: "Protein Trail Mix", description: "Roasted nuts, dried berries, seeds, and dark chocolate bites.", price: 649, compareAtPrice: null, stock: 19, isActive: true, images: ["https://images.unsplash.com/photo-1599599810769-bcde5a160d32?q=80&w=900&auto=format&fit=crop"], categoryId: food.id, category: food, badge: { type: "SELLING_FAST", label: "Selling Fast", color: "#ea580c" }, isFeatured: false, isProductOfMonth: false, soldCount: 77, createdAt: "2026-06-04T10:00:00.000Z" },
+  { id: "p-coffee", name: "Monsoon Roast Coffee", description: "Medium-dark roast beans with cocoa, spice, and caramel notes.", price: 799, compareAtPrice: null, stock: 7, isActive: true, images: ["https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=900&auto=format&fit=crop"], categoryId: food.id, category: food, badge: null, isFeatured: false, isProductOfMonth: false, soldCount: 52, createdAt: "2026-05-30T10:00:00.000Z" },
+  { id: "p-chips", name: "Baked Millet Chips", description: "Crisp, savory millet chips seasoned with peri peri.", price: 149, compareAtPrice: null, stock: 58, isActive: true, images: ["https://images.unsplash.com/photo-1566478989037-eec170784d0b?q=80&w=900&auto=format&fit=crop"], categoryId: food.id, category: food, badge: null, isFeatured: false, isProductOfMonth: false, soldCount: 36, createdAt: "2026-06-07T10:00:00.000Z" },
+];
+
+export const banners: Banner[] = [
+  { id: "b-hero-1", title: "Audio upgrades for every desk", imageUrl: "https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=80&w=1600&auto=format&fit=crop", linkType: "CATEGORY", linkValue: electronics.id, position: "HOME_HERO", type: "HERO", isActive: true, startDate: null, endDate: null, displayOrder: 1 },
+  { id: "b-hero-2", title: "Fresh fits, lighter days", imageUrl: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1600&auto=format&fit=crop", linkType: "CATEGORY", linkValue: clothing.id, position: "HOME_HERO", type: "HERO", isActive: true, startDate: null, endDate: null, displayOrder: 2 },
+  { id: "b-mid-promo", title: "Weekend pantry picks", imageUrl: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1600&auto=format&fit=crop", linkType: "CATEGORY", linkValue: food.id, position: "HOME_MIDDLE", type: "PROMOTIONAL", isActive: true, startDate: null, endDate: null, displayOrder: 1 },
+  { id: "b-bottom-offer", title: "Sale prices that make sense", imageUrl: "https://images.unsplash.com/photo-1607082350899-7e105aa886ae?q=80&w=1600&auto=format&fit=crop", linkType: "URL", linkValue: "/products", position: "HOME_BOTTOM", type: "OFFER", isActive: true, startDate: null, endDate: null, displayOrder: 1 },
+  { id: "b-mid-ad", title: "Trending Now", imageUrl: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=1600&auto=format&fit=crop", linkType: "URL", linkValue: "/products?sort=best", position: "HOME_MIDDLE", type: "AD", isActive: true, startDate: null, endDate: null, displayOrder: 2 },
+];
+
+export const promotions: Promotion[] = [
+  { id: "promo-month", title: "Product of the Month", description: "Our favorite pick with performance and style in balance.", type: "PRODUCT_OF_MONTH", productId: "p-running-shoes", categoryId: null, discountPercent: null, startDate: "2026-06-01T00:00:00.000Z", endDate: "2026-06-30T23:59:59.000Z", isActive: true, displayOrder: 1 },
+  { id: "promo-day", title: "Deal of the Day", description: "A focused 24-hour drop on a customer favorite.", type: "DEAL_OF_DAY", productId: "p-aurora-headphones", categoryId: null, discountPercent: 20, startDate: "2026-06-18T00:00:00.000Z", endDate: "2026-06-19T00:00:00.000Z", isActive: true, displayOrder: 2 },
+  { id: "promo-featured", title: "Featured: Food & Snacks", description: "Restock the pantry with fast-moving snack essentials.", type: "FEATURED", productId: null, categoryId: food.id, discountPercent: 10, startDate: "2026-06-01T00:00:00.000Z", endDate: "2026-07-01T00:00:00.000Z", isActive: true, displayOrder: 3 },
+];
+
+export const users: User[] = [
+  { id: "u-admin", name: "Anshu Admin", email: "admin@example.com", role: "ADMIN", createdAt: "2026-01-01T00:00:00.000Z" },
+  { id: "u-customer", name: "Mira Customer", email: "mira@example.com", role: "CUSTOMER", createdAt: "2026-03-14T00:00:00.000Z" },
+];
+
+export const addresses: Address[] = [
+  { id: "addr-1", userId: "u-customer", fullName: "Mira Customer", phone: "9876543210", line1: "12 Market Road", line2: "Apt 4B", city: "Bengaluru", state: "Karnataka", pincode: "560001", country: "India" },
+];
+
+export const orders: Order[] = [
+  { id: "ord-1001", userId: "u-customer", addressId: "addr-1", address: addresses[0], items: [{ id: "oi-1", orderId: "ord-1001", productId: "p-aurora-headphones", product: products[0], quantity: 1, price: products[0].price }], totalAmount: 9439, status: "CONFIRMED", paymentMethod: "RAZORPAY", paymentStatus: "PAID", createdAt: "2026-06-12T09:30:00.000Z" },
+  { id: "ord-1002", userId: "u-customer", addressId: "addr-1", address: addresses[0], items: [{ id: "oi-2", orderId: "ord-1002", productId: "p-granola", product: products[8], quantity: 3, price: products[8].price }], totalAmount: 1766, status: "SHIPPED", paymentMethod: "COD", paymentStatus: "PENDING", createdAt: "2026-06-16T13:15:00.000Z" },
+];
