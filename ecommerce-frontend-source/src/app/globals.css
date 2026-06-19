@@ -4,6 +4,14 @@
 @tailwind utilities;
 
 * { box-sizing: border-box; }
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and old Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}
 body { margin: 0; }
 .line-clamp-2 {
   display: -webkit-box;

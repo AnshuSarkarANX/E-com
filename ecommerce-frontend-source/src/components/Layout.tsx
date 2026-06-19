@@ -14,7 +14,7 @@ export function UserShell({ children }: { children: React.ReactNode }) {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-700 dark:bg-slate-950 dark:text-slate-200">
+    <div className="min-h-screen bg-slate-50 text-slate-700 dark:bg-slate-950 dark:text-slate-200 flex flex-col">
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="font-display text-3xl text-primary">TazaMart</Link>
@@ -33,7 +33,7 @@ export function UserShell({ children }: { children: React.ReactNode }) {
           </div>
         </nav>
       </header>
-      <main>{children}</main>
+      <main className="flex-1">{children}</main>
       <footer className="border-t border-slate-200 py-8 text-center text-sm dark:border-slate-800">Frontend-first commerce demo. Mock data today, GraphQL tomorrow.</footer>
     </div>
   );

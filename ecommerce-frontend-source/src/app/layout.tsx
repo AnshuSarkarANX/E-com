@@ -4,7 +4,7 @@ import { Providers } from "@/components/Providers";
 
 export const metadata: Metadata = {
   title: "TazaMart",
-  description: "Frontend-first e-commerce app with mock data and Apollo-ready APIs.",
+  description: "E-commerce app with mock data and Apollo-ready APIs.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
